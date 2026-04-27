@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,18 +16,20 @@ body{
   color:#e8ddc7;
 }
 
+/* NAV */
 nav{
   display:flex;
-  justify-content:space-between;
-  padding:20px 40px;
+  justify-content:center;
+  padding:25px;
 }
 
 nav h1{
   font-family:Playfair Display;
   color:#c8a97e;
-  font-size:20px;
+  letter-spacing:2px;
 }
 
+/* HERO */
 .hero{
   height:80vh;
   display:flex;
@@ -40,7 +41,7 @@ nav h1{
 
 .hero h2{
   font-family:Playfair Display;
-  font-size:48px;
+  font-size:50px;
   max-width:600px;
 }
 
@@ -49,20 +50,30 @@ nav h1{
   color:#aaa;
 }
 
+/* PRODUCTS */
 .section{
-  padding:80px 40px;
+  padding:100px 40px;
+}
+
+.products-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:40px;
 }
 
 .product{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
   text-align:center;
 }
 
 .product img{
-  width:300px;
-  border-radius:10px;
+  width:100%;
+  max-width:300px;
+  border-radius:12px;
+  transition:0.4s;
+}
+
+.product img:hover{
+  transform:scale(1.08);
 }
 
 .product h3{
@@ -75,8 +86,15 @@ nav h1{
   border:1px solid #c8a97e;
   background:none;
   color:#c8a97e;
+  cursor:pointer;
 }
 
+.btn:hover{
+  background:#c8a97e;
+  color:black;
+}
+
+/* STORY */
 .story{
   text-align:center;
   max-width:600px;
@@ -84,6 +102,7 @@ nav h1{
   line-height:1.6;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
   padding:40px;
@@ -93,7 +112,7 @@ footer{
 </head>
 
 <body>
- 
+
 <nav>
   <h1>XILO LEATHER</h1>
 </nav>
@@ -103,39 +122,52 @@ footer{
   <p>Minimal. Durable. Timeless.</p>
 </section>
 
+<!-- PRODUCTS -->
 <section class="section">
-  <div class="product">
-    <img src= >
-    <h3>Classic Wallet</h3>
-    <p>Rs 2500</p>
-    <button class="btn" onclick="order('Wallet')">Order</button>
+  <div class="products-grid">
+
+    <!-- WALLET -->
+    <div class="product">
+      <img src="PASTE_WALLET_IMAGE_LINK_HERE">
+      <h3>Xilo Classic Wallet</h3>
+      <p>Rs 2500</p>
+      <button class="btn" onclick="order('Wallet')">Order</button>
+    </div>
+
+    <!-- STRAP -->
+    <div class="product">
+      <img src="PASTE_STRAP_IMAGE_LINK_HERE">
+      <h3>Xilo Watch Strap</h3>
+      <p>Rs 1800</p>
+      <button class="btn" onclick="order('Watch Strap')">Order</button>
+    </div>
+
+    <!-- KEYCHAIN -->
+    <div class="product">
+      <img src="https://raw.githubusercontent.com/abubakarsabri33/Xilo.leather/main/Key_Chains_Mixed_Colors.jpg">
+      <h3>Xilo Keychain</h3>
+      <p>Rs 800</p>
+      <button class="btn" onclick="order('Keychain')">Order</button>
+    </div>
+
+    <!-- BELT -->
+    <div class="product">
+      <img src="PASTE_BELT_IMAGE_LINK_HERE">
+      <h3>Xilo Leather Belt</h3>
+      <p>Rs 3500</p>
+      <button class="btn" onclick="order('Leather Belt')">Order</button>
+    </div>
+
   </div>
 </section>
 
-<section class="section">
-  <div class="product">
-    <img src= >
-    <h3>Watch Strap</h3>
-    <p>Rs 1800</p>
-    <button class="btn" onclick="order('Watch Strap')">Order</button>
-  </div>
-</section>
-
-<section class="section">
-  <div class="product">
-    <img src="https://github.com/abubakarsabri33/Xilo.leather/blob/main/Key_Chains_Mixed_Colors.jpg">
-    <h3>Leather Keychain</h3>
-    <p>Rs 800</p>
-    <button class="btn" onclick="order('Keychain')">Order</button>
-  </div>
-</section>
-
+<!-- STORY -->
 <section class="section">
   <div class="story">
     <h2>Our Story</h2>
     <p>
-      Xilo Leather is built on craftsmanship, simplicity, and durability.
-      Each product is handmade with care, designed to age beautifully over time.
+      Xilo Leather creates premium handcrafted goods designed to last.
+      Every piece reflects quality, simplicity, and durability.
     </p>
   </div>
 </section>
@@ -149,26 +181,6 @@ function order(product){
   window.open("https://wa.me/923066453649?text=I want to order " + product);
 }
 </script>
-<script>
 
-function toggleMenu(){
-  document.getElementById("sideMenu").classList.toggle("show");
-}
-
-function searchProducts(value){
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    let text = card.innerText.toLowerCase();
-
-    if(text.includes(value.toLowerCase())){
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-
-</script>
 </body>
 </html>
