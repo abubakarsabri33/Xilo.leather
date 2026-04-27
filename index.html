@@ -1,201 +1,152 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Xilo Leather</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0d0d0d;
-    color: #f5f5dc;
+body{
+  margin:0;
+  font-family:Inter;
+  background:#0b0b0b;
+  color:#e8ddc7;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: #111;
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
 }
 
-header h1 {
-    color: #c8a97e;
+nav h1{
+  font-family:Playfair Display;
+  color:#c8a97e;
+  font-size:20px;
 }
 
-nav a {
-    color: #f5f5dc;
-    margin-left: 20px;
-    text-decoration: none;
+.hero{
+  height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-.hero {
-    text-align: center;
-    padding: 100px 20px;
+.hero h2{
+  font-family:Playfair Display;
+  font-size:48px;
+  max-width:600px;
 }
 
-.hero h2 {
-    font-size: 40px;
+.hero p{
+  margin-top:15px;
+  color:#aaa;
 }
 
-.products {
-    padding: 50px 20px;
-    text-align: center;
+.section{
+  padding:80px 40px;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+.product{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
 }
 
-.card {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 10px;
+.product img{
+  width:300px;
+  border-radius:10px;
 }
 
-.card img {
-    width: 100%;
-    border-radius: 10px;
+.product h3{
+  margin-top:15px;
 }
 
-button {
-    background: #c8a97e;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
+.btn{
+  margin-top:10px;
+  padding:10px 20px;
+  border:1px solid #c8a97e;
+  background:none;
+  color:#c8a97e;
 }
 
-.about, .contact {
-    padding: 50px 20px;
-    text-align: center;
+.story{
+  text-align:center;
+  max-width:600px;
+  margin:auto;
+  line-height:1.6;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-}
-
-@media(max-width:600px){
-    .hero h2 {
-        font-size: 28px;
-    }
+footer{
+  text-align:center;
+  padding:40px;
+  color:#777;
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-    <h1>Xilo Leather</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<nav>
+  <h1>XILO LEATHER</h1>
+</nav>
 
-<section class="hero" id="home">
-    <h2>Handcrafted Leather Goods</h2>
-    <p>Timeless design. Premium quality.</p>
+<section class="hero">
+  <h2>Handcrafted Leather Goods Built to Last</h2>
+  <p>Minimal. Durable. Timeless.</p>
 </section>
 
-<section class="products" id="products">
-    <h2>Our Products</h2>
-
-    <div class="product-grid">
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Wallet">
-            <h3>Classic Wallet</h3>
-            <p>$25</p>
-            <button onclick="order()">Order on WhatsApp</button>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Watch Strap">
-            <h3>Leather Watch Strap</h3>
-            <p>$15</p>
-            <button onclick="order()">Order on WhatsApp</button>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Keychain">
-            <h3>Leather Keychain</h3>
-            <p>$8</p>
-            <button onclick="order()">Order on WhatsApp</button>
-        </div>
-
-    </div>
-</section><!-- WHY CHOOSE US -->
 <section class="section">
-  <h2>Why Choose Xilo Leather</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Handcrafted</h3>
-      <p>Every piece is handmade with attention to detail.</p>
-    </div>
-    <div class="card">
-      <h3>Premium Leather</h3>
-      <p>We use high-quality leather for durability.</p>
-    </div>
-    <div class="card">
-      <h3>Minimal Design</h3>
-      <p>Clean and timeless style for everyday use.</p>
-    </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80">
+    <h3>Classic Wallet</h3>
+    <p>Rs 2500</p>
+    <button class="btn" onclick="order('Wallet')">Order</button>
   </div>
 </section>
 
-<!-- CUSTOMER REVIEWS -->
 <section class="section">
-  <h2>Customer Reviews</h2>
-  <div class="grid">
-    <div class="card">
-      <p>"Excellent craftsmanship and premium feel."</p>
-      <h4>- Customer</h4>
-    </div>
-    <div class="card">
-      <p>"Very stylish and durable leather."</p>
-      <h4>- Customer</h4>
-    </div>
-    <div class="card">
-      <p>"Highly recommended quality products."</p>
-      <h4>- Customer</h4>
-    </div>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
+    <h3>Watch Strap</h3>
+    <p>Rs 1800</p>
+    <button class="btn" onclick="order('Watch Strap')">Order</button>
   </div>
 </section>
 
-<!-- CALL TO ACTION -->
 <section class="section">
-  <h2>Ready to Own Premium Leather?</h2>
-  <p>Order now directly via WhatsApp</p>
-  <button class="btn" onclick="order('Xilo Product')">Order Now</button>
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1601924928357-9c5c5c2b2d12">
+    <h3>Leather Keychain</h3>
+    <p>Rs 800</p>
+    <button class="btn" onclick="order('Keychain')">Order</button>
+  </div>
 </section>
 
-<section class="about" id="about">
-    <h2>About Us</h2>
-    <p>Xilo Leather creates handcrafted leather goods designed for durability, simplicity, and timeless style.</p>
-</section>
-
-<section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Message us on WhatsApp to place your order.</p>
+<section class="section">
+  <div class="story">
+    <h2>Our Story</h2>
+    <p>
+      Xilo Leather is built on craftsmanship, simplicity, and durability.
+      Each product is handmade with care, designed to age beautifully over time.
+    </p>
+  </div>
 </section>
 
 <footer>
-    <p>© 2026 Xilo Leather</p>
+  © Xilo Leather
 </footer>
 
 <script>
-function order(){
-    window.open("https://wa.me/923066453649", "_blank");
+function order(product){
+  window.open("https://wa.me/923066453649?text=I want to order " + product);
 }
 </script>
 
