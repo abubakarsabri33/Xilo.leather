@@ -92,7 +92,24 @@ footer{
 </style>
 </head>
 
-<body>
+<body><nav class="navbar">
+
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="logo">XILO LEATHER</div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Search products..." onkeyup="searchProducts(this.value)">
+  </div>
+
+</nav>
+
+<div id="sideMenu" class="side-menu">
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <nav>
   <h1>XILO LEATHER</h1>
