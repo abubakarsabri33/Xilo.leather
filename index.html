@@ -8,7 +8,59 @@
 <title>Xilo Leather</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 20px;
+  position:sticky;
+  top:0;
+  background:#0b0b0b;
+  z-index:1000;
+}
 
+.menu-icon{
+  font-size:26px;
+  cursor:pointer;
+  color:#c8a97e;
+}
+
+.logo{
+  font-family:"Playfair Display";
+  color:#c8a97e;
+  font-size:18px;
+}
+
+.search-box input{
+  padding:8px;
+  border-radius:6px;
+  border:none;
+  outline:none;
+  width:150px;
+}
+
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-250px;
+  width:200px;
+  height:100%;
+  background:#141414;
+  padding:20px;
+  transition:0.3s;
+  display:flex;
+  flex-direction:column;
+}
+
+.side-menu a{
+  color:#e8ddc7;
+  text-decoration:none;
+  margin:15px 0;
+}
+
+.side-menu.show{
+  left:0;
+}
 <style>
 body{
   margin:0;
@@ -167,6 +219,26 @@ function order(product){
   window.open("https://wa.me/923066453649?text=I want to order " + product);
 }
 </script>
+<script>
 
+function toggleMenu(){
+  document.getElementById("sideMenu").classList.toggle("show");
+}
+
+function searchProducts(value){
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+
+    if(text.includes(value.toLowerCase())){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+</script>
 </body>
 </html>
